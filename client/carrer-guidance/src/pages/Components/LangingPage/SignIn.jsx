@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { 
+  Card, 
+  CardContent, 
+  Typography, 
+  TextField, 
+  Button, 
+  Box, 
+  Container, 
+  Link 
+} from '@mui/material';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -14,49 +21,74 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-white rounded-lg shadow-md">
-        <CardHeader>
-          <h2 className="text-2xl font-bold text-center text-gray-800">Sign In to AI-Powered Career Tools</h2>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSignIn} className="space-y-4">
-            <div>
-              <Input
+    <Box 
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(to right, #4a90e2, #50c878)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 2
+      }}
+    >
+      <Container maxWidth="sm">
+        <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
+          <CardContent sx={{ padding: 4 }}>
+            <Typography variant="h4" component="h2" align="center" gutterBottom>
+              Sign In
+            </Typography>
+            <form onSubmit={handleSignIn}>
+              <TextField
+                fullWidth
                 type="email"
-                placeholder="Email"
+                label="Email"
+                variant="outlined"
+                margin="normal"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </div>
-            <div>
-              <Input
+              <TextField
+                fullWidth
                 type="password"
-                placeholder="Password"
+                label="Password"
+                variant="outlined"
+                margin="normal"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </div>
-            <Button
-              type="submit"
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
-            >
-              Sign In
-            </Button>
-          </form>
-          <div className="mt-4 text-center">
-            <a href="#" className="text-sm text-blue-500 hover:underline">Forgot password?</a>
-          </div>
-          <p className="mt-4 text-center text-sm text-gray-600">
-            Don't have an account? <a href="#" className="text-blue-500 hover:underline">Sign up</a>
-          </p>
-        </CardContent>
-      </Card>
-    </div>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ 
+                  mt: 3, 
+                  mb: 2, 
+                  bgcolor: 'warning.main',
+                  '&:hover': {
+                    bgcolor: 'warning.dark',
+                  }
+                }}
+              >
+                Sign In
+              </Button>
+            </form>
+            <Box textAlign="center" mt={2}>
+              <Link href="#" underline="hover">
+                Forgot password?
+              </Link>
+            </Box>
+            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
+              Don't have an account?{' '}
+              <Link href="/signup" className='cursor-pointer' underline="hover">
+                Sign up
+              </Link>
+            </Typography>
+          </CardContent>
+        </Card>
+      </Container>
+    </Box>
   );
 };
 

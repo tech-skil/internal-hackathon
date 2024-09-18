@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { 
+  Card, 
+  CardContent, 
+  Typography, 
+  TextField, 
+  Button, 
+  Box, 
+  Container, 
+  Link 
+} from '@mui/material';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -15,56 +23,89 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-white rounded-lg shadow-md">
-        <CardHeader>
-          <h2 className="text-2xl font-bold text-center text-gray-800">Sign Up for AI-Powered Career Tools</h2>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSignUp} className="space-y-4">
-            <div>
-              <Input
+    <Box 
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(to right, #4a90e2, #50c878)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 2
+      }}
+    >
+      <Container maxWidth="sm">
+        <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
+          <CardContent sx={{ padding: 4 }}>
+            <Typography variant="h4" component="h2" align="center" gutterBottom>
+              Sign Up
+            </Typography>
+            <form onSubmit={handleSignUp}>
+              <TextField
+                fullWidth
+                type="text"
+                label="User Name"
+                variant="outlined"
+                margin="normal"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <TextField
+                fullWidth
                 type="email"
-                placeholder="Email"
+                label="Email"
+                variant="outlined"
+                margin="normal"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </div>
-            <div>
-              <Input
+              <TextField
+                fullWidth
                 type="password"
-                placeholder="Password"
+                label="Password"
+                variant="outlined"
+                margin="normal"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </div>
-            <div>
-              <Input
+              <TextField
+                fullWidth
                 type="password"
-                placeholder="Confirm Password"
+                label="Confirm Password"
+                variant="outlined"
+                margin="normal"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </div>
-            <Button
-              type="submit"
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
-            >
-              Sign Up
-            </Button>
-          </form>
-          <p className="mt-4 text-center text-sm text-gray-600">
-            Already have an account? <a href="#" className="text-blue-500 hover:underline">Log in</a>
-          </p>
-        </CardContent>
-      </Card>
-    </div>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ 
+                  mt: 3, 
+                  mb: 2, 
+                  bgcolor: 'warning.main',
+                  '&:hover': {
+                    bgcolor: 'warning.dark',
+                  }
+                }}
+              >
+                Sign Up
+              </Button>
+            </form>
+            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
+              Already have an account?{' '}
+              <Link href="/signin" className='cursor-pointer' underline="hover">
+                Log in
+              </Link>
+            </Typography>
+          </CardContent>
+        </Card>
+      </Container>
+    </Box>
   );
 };
 

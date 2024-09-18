@@ -94,5 +94,4 @@ const AssessmentFlow = () => {
     </div>
   );
 };
-
 export default AssessmentFlow;

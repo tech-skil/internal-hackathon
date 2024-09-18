@@ -9,6 +9,8 @@ import Roadmap from './pages/Components/CareerGuidanceRoadmap';
 import Footer from './pages/Components/LangingPage/Footer';
 import AssessmentPage from './pages/Components/AptitudeStrendthTest/AssessmentFlow'; 
 import Quiz from './pages/Components/AptitudeStrendthTest/Quiz/Main'; 
+import Signup from './pages/Components/LangingPage/SignUp'; 
+import SignIn from './pages/Components/LangingPage/SignIn'; 
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
           <Route path="/assessment" element={<AssessmentPage />} /> 
           <Route path="/quiz" element={<Quiz />} /> 
           <Route path="/roadmap" element={<Roadmap />} /> 
+          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/signin" element={<SignIn />} /> 
         </Routes>
         <ChatIcon />
         <Footer />

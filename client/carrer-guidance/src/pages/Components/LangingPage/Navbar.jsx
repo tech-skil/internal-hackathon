@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-yellow-400">Career</Link>
+        <Link to="/" className="text-2xl font-black text-yellow-400">CareerThrive</Link>
         <div className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-yellow-400 transition duration-300">Home</Link>
           <Link to="/about" className="hover:text-yellow-400 transition duration-300">About</Link>
