@@ -2,21 +2,22 @@ import React from 'react';
 
 const MCQComponent = ({ question, options, selectedAnswer, onSelectAnswer }) => {
   return (
-    <div className="mb-6">
+    <div className="mb-4">
       <h3 className="text-lg font-semibold mb-2">{question}</h3>
       <div className="space-y-2">
         {options.map((option, index) => (
-          <label key={index} className="flex items-center space-x-2 cursor-pointer">
+          <div key={index} className="flex items-center">
             <input
               type="radio"
-              name={`question-${question.id}`}
+              id={`option-${index}`}
+              name="answer"
               value={option}
               checked={selectedAnswer === option}
               onChange={() => onSelectAnswer(option)}
-              className="form-radio text-blue-600"
+              className="mr-2"
             />
-            <span>{option}</span>
-          </label>
+            <label htmlFor={`option-${index}`}>{option}</label>
+          </div>
         ))}
       </div>
     </div>

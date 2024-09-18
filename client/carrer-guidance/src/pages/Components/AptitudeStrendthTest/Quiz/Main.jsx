@@ -1,5 +1,5 @@
 import React from 'react';
-import AssessmentFlow from './AssessmentFlow';
+import AssessmentFlow from '../AssessmentFlow';
 
 const Main = () => {
   return (
