@@ -16,7 +16,8 @@ const Navbar = () => {
           <a href="#" className="hover:text-yellow-400 transition duration-300">Home</a>
           <a href="#" className="hover:text-yellow-400 transition duration-300">About</a>
           <a href="#" className="hover:text-yellow-400 transition duration-300">Contact Us</a>
-          <a href="#" className="hover:text-yellow-400 transition duration-300">Privacy Policy</a>
+          <a href="#" className="hover:text-yellow-400 transition duration-300">Carrer Guid suggestion</a>
+          <a href="#" className="hover:text-yellow-400 transition duration-300">carrer path</a>
         </div>
         <button className="hidden md:block bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-bold py-2 px-4 rounded transition duration-300">
           Sign/Signup
