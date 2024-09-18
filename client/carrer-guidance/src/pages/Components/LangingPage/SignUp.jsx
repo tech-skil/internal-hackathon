@@ -15,7 +15,7 @@ const SignUp = () => {
   };
 
   return (
-    <div id='SignUp' className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center p-4">
       <Card className="w-full max-w-md bg-white rounded-lg shadow-md">
         <CardHeader>
           <h2 className="text-2xl font-bold text-center text-gray-800">Sign Up for AI-Powered Career Tools</h2>
